@@ -1,23 +1,21 @@
-From: Peter Lemenkov <lemenkov@gmail.com>
-Date: Fri, 21 Sep 2018 12:47:42 +0200
-Subject: [PATCH] Link against shared library
-
-Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
-
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index e1f87062..bff03e88 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -34,7 +34,7 @@ SET_TARGET_PROPERTIES	( ${ly_lib_shared} PROPERTIES VERSION "0.0.0" SOVERSION 0
+diff -up libyuv-0/CMakeLists.txt.2~ libyuv-0/CMakeLists.txt
+--- libyuv-0/CMakeLists.txt.2~	2023-01-04 00:25:10.080999909 +0100
++++ libyuv-0/CMakeLists.txt	2023-01-04 00:25:48.680277109 +0100
+@@ -40,11 +40,11 @@ SET_TARGET_PROPERTIES	( ${ly_lib_shared}
  
  # this creates the conversion tool
  ADD_EXECUTABLE			( yuvconvert ${ly_base_dir}/util/yuvconvert.cc )
 -TARGET_LINK_LIBRARIES	( yuvconvert ${ly_lib_static} )
 +TARGET_LINK_LIBRARIES	( yuvconvert ${ly_lib_shared} )
  
+ # this creates the yuvconstants tool
+ ADD_EXECUTABLE      ( yuvconstants ${ly_base_dir}/util/yuvconstants.c )
+-TARGET_LINK_LIBRARIES  ( yuvconstants ${ly_lib_static} )
++TARGET_LINK_LIBRARIES  ( yuvconstants ${ly_lib_shared} )
  
- INCLUDE ( FindJPEG )
-@@ -61,7 +61,7 @@ if(TEST)
+ find_package ( JPEG )
+ if (JPEG_FOUND)
+@@ -70,7 +70,7 @@ if(TEST)
    endif()
  
    add_executable(libyuv_unittest ${ly_unittest_sources})

@@ -5,21 +5,20 @@
 Name:		libyuv
 Summary:	YUV conversion and scaling functionality library
 Version:	0
-Release:	0.43.20220922gitf9fda6e%{?dist}
+Release:	0.43.20230103git22a579c
 License:	BSD
 Url:		https://chromium.googlesource.com/libyuv/libyuv
 VCS:		scm:git:https://chromium.googlesource.com/libyuv/libyuv
 ## git clone https://chromium.googlesource.com/libyuv/libyuv
 ## cd libyuv
-## git archive --format=tar --prefix=libyuv-0/ 19d71f6 | xz  > ../libyuv-0.tar.xz
+## git archive --format=tar --prefix=libyuv-0/ 22a579c | xz  > ../libyuv-0.tar.xz
 Source0:	%{name}-%{version}.tar.xz
-# Fedora-specific. Upstream isn't interested in these patches.
+# Packaging specific. Upstream isn't interested in these patches.
 Patch1:		libyuv-0001-Use-a-proper-so-version.patch
 Patch2:		libyuv-0002-Link-against-shared-library.patch
 Patch3:		libyuv-0003-Disable-static-library.patch
 Patch4:		libyuv-0004-Don-t-install-conversion-tool.patch
 Patch5:		libyuv-0005-Use-library-suffix-during-installation.patch
-Patch6:		libyuv-0006-Link-main-library-against-libjpeg.patch
 BuildRequires:	cmake
 BuildRequires:	gtest-devel
 BuildRequires:	jpeg-devel
