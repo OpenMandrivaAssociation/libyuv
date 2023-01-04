@@ -11,7 +11,7 @@ diff -up libyuv-0/CMakeLists.txt.2~ libyuv-0/CMakeLists.txt
  # this creates the yuvconstants tool
  ADD_EXECUTABLE      ( yuvconstants ${ly_base_dir}/util/yuvconstants.c )
 -TARGET_LINK_LIBRARIES  ( yuvconstants ${ly_lib_static} )
-+TARGET_LINK_LIBRARIES  ( yuvconstants ${ly_lib_shared} )
++TARGET_LINK_LIBRARIES  ( yuvconstants ${ly_lib_shared} -lm )
  
  find_package ( JPEG )
  if (JPEG_FOUND)
