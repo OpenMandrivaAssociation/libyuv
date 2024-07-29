@@ -1,11 +1,11 @@
 diff -up libyuv-0/CMakeLists.txt.1~ libyuv-0/CMakeLists.txt
---- libyuv-0/CMakeLists.txt.1~	2023-01-04 00:24:01.233503908 +0100
-+++ libyuv-0/CMakeLists.txt	2023-01-04 00:24:53.998884241 +0100
-@@ -36,6 +36,7 @@ SET_TARGET_PROPERTIES	( ${ly_lib_shared}
- if(WIN32)
-   SET_TARGET_PROPERTIES	( ${ly_lib_shared} PROPERTIES IMPORT_PREFIX "lib" )
- endif()
-+SET_TARGET_PROPERTIES	( ${ly_lib_shared} PROPERTIES VERSION "0.0.0" SOVERSION 0 )
+--- libyuv-0/CMakeLists.txt.1~	2024-07-29 20:50:43.032582987 +0200
++++ libyuv-0/CMakeLists.txt	2024-07-29 20:51:45.489398514 +0200
+@@ -143,6 +143,7 @@ ADD_LIBRARY( ${ly_lib_static} STATIC ${l
  
- # this creates the conversion tool
- ADD_EXECUTABLE			( yuvconvert ${ly_base_dir}/util/yuvconvert.cc )
+ # this creates the shared library (.so)
+ ADD_LIBRARY( ${ly_lib_shared} SHARED ${ly_lib_parts})
++SET_TARGET_PROPERTIES( ${ly_lib_shared} PROPERTIES VERSION "0.0.0" SOVERSION 0 )
+ SET_TARGET_PROPERTIES( ${ly_lib_shared} PROPERTIES OUTPUT_NAME "${ly_lib_name}" )
+ SET_TARGET_PROPERTIES( ${ly_lib_shared} PROPERTIES PREFIX "lib" )
+ if(WIN32)

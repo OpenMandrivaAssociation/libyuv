@@ -1,8 +1,8 @@
 diff -up libyuv-0/CMakeLists.txt.4~ libyuv-0/CMakeLists.txt
---- libyuv-0/CMakeLists.txt.4~	2023-01-04 00:27:53.966186277 +0100
-+++ libyuv-0/CMakeLists.txt	2023-01-04 00:28:32.039462568 +0100
-@@ -38,8 +38,8 @@ endif()
- SET_TARGET_PROPERTIES	( ${ly_lib_shared} PROPERTIES VERSION "0.0.0" SOVERSION 0 )
+--- libyuv-0/CMakeLists.txt.4~	2024-07-29 20:53:18.282655347 +0200
++++ libyuv-0/CMakeLists.txt	2024-07-29 20:53:56.335182863 +0200
+@@ -155,8 +155,8 @@ ADD_EXECUTABLE      ( cpuid ${ly_base_di
+ TARGET_LINK_LIBRARIES  ( cpuid ${ly_lib_shared} )
  
  # this creates the conversion tool
 -ADD_EXECUTABLE			( yuvconvert ${ly_base_dir}/util/yuvconvert.cc )
@@ -12,7 +12,7 @@ diff -up libyuv-0/CMakeLists.txt.4~ libyuv-0/CMakeLists.txt
  
  # this creates the yuvconstants tool
  ADD_EXECUTABLE      ( yuvconstants ${ly_base_dir}/util/yuvconstants.c )
-@@ -90,9 +90,8 @@ if(TEST)
+@@ -211,9 +211,8 @@ if(UNIT_TEST)
  endif()
  
  

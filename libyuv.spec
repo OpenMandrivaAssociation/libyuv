@@ -5,14 +5,14 @@
 Name:		libyuv
 Summary:	YUV conversion and scaling functionality library
 Version:	0
-Release:	0.43.20230103git22a579c
+Release:	0.43.20240729git4cd9034
 License:	BSD
 Url:		https://chromium.googlesource.com/libyuv/libyuv
 VCS:		scm:git:https://chromium.googlesource.com/libyuv/libyuv
 ## git clone https://chromium.googlesource.com/libyuv/libyuv
 ## cd libyuv
-## git archive --format=tar --prefix=libyuv-0/ 22a579c | xz  > ../libyuv-0.tar.xz
-Source0:	%{name}-%{version}.tar.xz
+## git archive --format=tar --prefix=libyuv-0/ 4cd9034 | zstd --ultra -22 > ../libyuv-0.tar.zst
+Source0:	%{name}-%{version}.tar.zst
 # Packaging specific. Upstream isn't interested in these patches.
 Patch1:		libyuv-0001-Use-a-proper-so-version.patch
 Patch2:		libyuv-0002-Link-against-shared-library.patch
